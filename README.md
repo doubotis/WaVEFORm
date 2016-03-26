@@ -1,4 +1,4 @@
-# java-website-mvc
+# Java Website Model-View-Controller Framework
 Model-View-Controller Wrapper for Java Websites, using Web Java EE
 
 ## What is this?
