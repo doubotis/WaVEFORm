@@ -11,6 +11,12 @@ Another goal is to make a library that works like Smarty for PHP. For Java. And 
 
 Go to the Wiki Page to get how it works.
 
+## Main Features
+* Easy-to-use, with a minimum of config files and annotations
+* Regex pattern to control the display of each webpage
+* Internationalization
+* Custom pages for HTTP status codes
+
 ## Installation Guide
 
 ### Step 1 : Prerequisites
