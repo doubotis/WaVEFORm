@@ -3,13 +3,13 @@ Model-View-Controller Wrapper for Java Websites, using Web Java EE
 
 ## What is this?
 
-Java EE is very strong, but missing some major features for website development. In fact, modeling could be done with powerful tools like JPA. JSP and JSTL are a sufficient way to handle the "view" concept, but we missing a easy-to-use controller system. *Like Spring or Struts, this is a library that handles the concept of MVC (Model-View-Controller) for Web Development.*
+Java EE is very strong, but missed some major features for efficient website development. In fact, modeling could be done with powerful tools like JPA. JSP and JSTL are a sufficient way to handle the "view" concept, but we missing an easy-to-use controller system. *Like Spring or Struts, this is a library that handles the concept of MVC (Model-View-Controller) for Web Development.*
 
-But, this one is waaay lighter and easier to use than Spring or Struts (or at least this was the main goal while developing this tool). Because sometimes, we doesn't need to build a tower when a house is completely sufficient.
+But, this one is waaay lighter and easier to use than Spring or Struts (or at least this was the main goal while developing this library). Because sometimes, we doesn't need to build a tower when a house is completely sufficient.
 
-Another goal is to make a library that works like Smarty for PHP. For Java. And of course with some tweaks.
+Another goal is to make a library that works like Smarty for PHP. Ported fpr Java. And of course with some tweaks.
 
-Go to the [Wiki](https://github.com/doubotis/java-website-mvc/wiki) Page to get how it works.
+Go to the [Wiki](https://github.com/doubotis/java-website-mvc/wiki) Page to get how it works and how to use.
 
 ## Main Features
 * Easy-to-use, with a minimum of config files and annotations
@@ -19,9 +19,11 @@ Go to the [Wiki](https://github.com/doubotis/java-website-mvc/wiki) Page to get 
 
 ## Installation Guide
 
-### Step 1 : Prerequisites
-Only works inside a Web Java EE Project.
-Include the `store/java-websitee-mvc.jar` from the Github project in the librairies of your Web Java EE Project.
+### Quick Install
+
+Download the [all-inclusive library](https://github.com/doubotis/java-website-mvc/blob/master/store/java-website-mvc.jar).
+Then add it to the list of librairies of a Web Java EE Project.
+
 This .jar includes:
 * The library itself
 * Web Java EE6 library
