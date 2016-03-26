@@ -1,4 +1,4 @@
-# Java Website Model-View-Controller Framework
+# WaVEFORm
 Model-View-Controller Wrapper for Java Websites, using Web Java EE
 
 ## What is this?
