@@ -5,6 +5,11 @@ MVC Wrapper for Java Websites
 
 ### Step 1 : Prerequisites
 Only works inside a Web Java EE Project.
+Include the `store/java-websitee-mvc.jar' from the Github project in the librairies of your Web Java EE Project.
+This .jar includes:
+* The library itself
+* Web Java EE6 library
+* Reflections-0.9 - from Google, based on https://github.com/ronmamo/reflections
 
 ### Step 2 : Setup the web.xml
 The `web.xml` configuration file must be completed as this :
