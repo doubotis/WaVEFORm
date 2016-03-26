@@ -9,7 +9,7 @@ But, this one is waaay lighter and easier to use than Spring or Struts (or at le
 
 Another goal is to make a library that works like Smarty for PHP. For Java. And of course with some tweaks.
 
-Go to the Wiki Page to get how it works.
+Go to the [Wiki](https://github.com/doubotis/java-website-mvc/wiki) Page to get how it works.
 
 ## Main Features
 * Easy-to-use, with a minimum of config files and annotations
