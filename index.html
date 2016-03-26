@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Java Website Model-View-Controller Framework by doubotis</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Java Website Model-View-Controller Framework</h1>
+      <h2 class="project-tagline">Model-View-Controller Wrapper for Java Websites, using Web Java EE</h2>
+      <a href="https://github.com/doubotis/java-website-mvc" class="btn">View on GitHub</a>
+      <a href="https://github.com/doubotis/java-website-mvc/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/doubotis/java-website-mvc/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="java-website-model-view-controller-framework" class="anchor" href="#java-website-model-view-controller-framework" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Java Website Model-View-Controller Framework</h1>
+
+<p>Model-View-Controller Wrapper for Java Websites, using Web Java EE</p>
+
+<h2>
+<a id="what-is-this" class="anchor" href="#what-is-this" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What is this?</h2>
+
+<p>Java EE is very strong, but missed some major features for efficient website development. In fact, modeling could be done with powerful tools like JPA. JSP and JSTL are a sufficient way to handle the "view" concept, but we missing an easy-to-use controller system. <em>Like Spring or Struts, this is a library that handles the concept of MVC (Model-View-Controller) for Web Development.</em></p>
+
+<p>But, this one is waaay lighter and easier to use than Spring or Struts (or at least this was the main goal while developing this library). Because sometimes, we doesn't need to build a tower when a house is completely sufficient.</p>
+
+<p>Another goal is to make a library that works like Smarty for PHP. Ported fpr Java. And of course with some tweaks.</p>
+
+<p>Go to the <a href="https://github.com/doubotis/java-website-mvc/wiki">Wiki</a> Page to get how it works and how to use.</p>
+
+<h2>
+<a id="main-features" class="anchor" href="#main-features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Main Features</h2>
+
+<ul>
+<li>Easy-to-use, with a minimum of config files and annotations</li>
+<li>Regex pattern to control the display of each webpage</li>
+<li>Internationalization</li>
+<li>Custom pages for HTTP status codes</li>
+</ul>
+
+<h2>
+<a id="installation-guide" class="anchor" href="#installation-guide" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation Guide</h2>
+
+<h3>
+<a id="quick-install" class="anchor" href="#quick-install" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Quick Install</h3>
+
+<p>Download the <a href="https://github.com/doubotis/java-website-mvc/blob/master/store/java-website-mvc.jar">all-inclusive library</a>.
+Then add it to the list of librairies of a Web Java EE Project.</p>
+
+<p>This .jar includes:</p>
+
+<ul>
+<li>The library itself</li>
+<li>Web Java EE6 library</li>
+<li>Reflections-0.9 - from Google, based on <a href="https://github.com/ronmamo/reflections">https://github.com/ronmamo/reflections</a>
+</li>
+<li>Java HTTP Extensions - from doubotis. Add some classes for better Web Development.</li>
+</ul>
+
+<h3>
+<a id="setup-the-webxml" class="anchor" href="#setup-the-webxml" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Setup the web.xml</h3>
+
+<p>Now the library is installed, you must configure the <code>web.xml</code> file, to add the ServletController:</p>
+
+<pre><code>    &lt;servlet&gt;
+        &lt;servlet-name&gt;ServletController&lt;/servlet-name&gt;
+        &lt;servlet-class&gt;be.doubotis.mvc.core.ServletController&lt;/servlet-class&gt;
+    &lt;/servlet&gt;
+    &lt;servlet-mapping&gt;
+        &lt;servlet-name&gt;ServletController&lt;/servlet-name&gt;
+        &lt;url-pattern&gt;*.html&lt;/url-pattern&gt;
+    &lt;/servlet-mapping&gt;
+</code></pre>
+
+<p>This means all .HTML files on the site will be managed by the <code>ServletController</code>.
+You can use a custom filter and a different url-pattern to match your needs.
+This servlet will serve all the webpages you need to display to the user.</p>
+
+<p>Now you can begin to use the library. To get how to use it, please see <a href="https://github.com/doubotis/java-website-mvc/wiki">here</a></p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/doubotis/java-website-mvc">Java Website Model-View-Controller Framework</a> is maintained by <a href="https://github.com/doubotis">doubotis</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
