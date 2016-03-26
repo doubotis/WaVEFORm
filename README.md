@@ -1,5 +1,5 @@
 # java-website-mvc
-MVC Wrapper for Java Websites
+Model-View-Controller Wrapper for Java Websites
 
 ## What is this?
 
