@@ -44,15 +44,15 @@ public class ServletController extends HttpServlet implements ServletControllerC
         response.setContentType("text/html;charset=UTF-8");
         
         // Get the Controller Scanner.
-        ControllerScanner cs = ControllerScanner.fromFile(
-                request.getServletContext(), 
-                "/WEB-INF/setup.xml");
+        ControllerScanner cs = ControllerScanner.fromContext(
+                request.getServletContext());
         
         try
         {
             // Get the page to display.
             String contextPath = request.getContextPath();
-            String pathInfo = request.getRequestURI().replaceFirst(contextPath, "");
+            String pathInfo = request.getRequestURI()
+                    .replaceFirst(contextPath, "");
             String page = pathInfo.substring(1);
             if (page.equals("")) page = "index.html";
 

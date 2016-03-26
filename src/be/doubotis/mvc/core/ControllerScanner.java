@@ -6,7 +6,8 @@
 package be.doubotis.mvc.core;
 
 import be.doubotis.http.exceptions.HTTPException;
-import be.doubotis.mvc.core.annotations.ControllerPath;
+import be.doubotis.mvc.core.annotations.CError;
+import be.doubotis.mvc.core.annotations.CPath;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -32,18 +33,16 @@ public class ControllerScanner {
     private HashMap<String, Class<? extends Controller>> mControllers;
     private HashMap<Integer, Class<? extends Controller>> mErrorControllers;
     
-    public ControllerScanner(ServletContext context, String file)
+    public ControllerScanner(ServletContext context)
     {
-        setup(context, file);
+        setup(context);
     }
     
-    public static ControllerScanner fromFile(ServletContext context, String file)
+    public static ControllerScanner fromContext(ServletContext context)
     {
         try
         {
-            InputStream is = context.getResourceAsStream(file);
-            
-            ControllerScanner cs = new ControllerScanner(context, file);
+            ControllerScanner cs = new ControllerScanner(context);
             return cs;
         }
         catch (Exception e)
@@ -94,63 +93,57 @@ public class ControllerScanner {
         }
     }
     
-    private void setup(ServletContext context, String file)
+    private void setup(ServletContext context)
     {
         try
-        {
-            InputStream is = context.getResourceAsStream(file);
-            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-            Document doc = dBuilder.parse(is);
-            
-            Element controllersEl = (Element)
-                    doc.getElementsByTagName("controllers").item(0);
-            String packageToLookup = controllersEl.getAttribute("location");
-            
-            Reflections reflections = new Reflections(packageToLookup);
+        {     
+            Reflections reflections = new Reflections("");
             Set<Class<? extends Controller>> subTypes = 
                   reflections.getSubTypesOf(Controller.class);
             
+            // Prepare the list of controllers.
             mControllers = new HashMap<String, Class<? extends Controller>>();
+            mErrorControllers = new HashMap<Integer, Class<? extends Controller>>();
+            
+            // Loop inside the controllers.
             Iterator<Class<? extends Controller>> it = subTypes.iterator();
             while (it.hasNext())
             {
                 Class<? extends Controller> controller = it.next();
                 
-                ControllerPath annotation = (ControllerPath) 
-                        controller.getAnnotation(ControllerPath.class);
+                CPath pathAnnot = (CPath) 
+                        controller.getAnnotation(CPath.class);
                 
-                if (annotation == null)
-                    continue;
-                
-                String path = annotation.path();
-                
-                mControllers.put(path, controller);
-            }
-            
-            mErrorControllers = new HashMap<Integer, Class<? extends Controller>>();
-            
-            Element errorsEl = (Element)
-                    doc.getElementsByTagName("errors").item(0);
-            NodeList nl = errorsEl.getElementsByTagName("error");
-            for (int i=0; i < nl.getLength(); i++)
-            {
-                Element el = (Element)nl.item(i);
-                String codeAsString = el.getAttribute("code");
-                int code = -1;
-                try {
-                    code = Integer.parseInt(codeAsString);
-                } catch (NumberFormatException nfe) {
-                    if (codeAsString.equals("*"))
-                        code = -1;
+                if (pathAnnot != null)
+                {
+                    // This controller can be accessed by normal path.
+                    String path = pathAnnot.path();
+                    mControllers.put(path, controller);
                 }
-                String location = el.getAttribute("location");
-                
-                Class c = Class.forName(location);
-                
-                mErrorControllers.put(code, c);
+                else
+                {
+                    CError errAnnot = (CError) 
+                        controller.getAnnotation(CError.class);
+                    
+                    if (errAnnot != null)
+                    {
+                        // This controller can be accessed by error code.
+                        String result = errAnnot.errorCode();
+                        String[] errorCodes = result.split(",");
+                        for (int i=0; i < errorCodes.length; i++)
+                        {
+                            int code = -1;
+                            try {
+                                code = Integer.parseInt(errorCodes[i]);
+                            } catch (NumberFormatException nfe) {
+                                if (errorCodes[i].equals("*"))
+                                    code = -1;
+                            }
+                            mErrorControllers.put(code, controller);
+                        }
+                    }
+                } 
             }
-            
         }
         catch (Exception e)
         {
