@@ -48,4 +48,4 @@ This means all .HTML files on the site will be managed by the `ServletController
 You can use a custom filter and a different url-pattern to match your needs.
 This servlet will serve all the webpages you need to display to the user.
 
-Now you can begin to use the library. To get how to use it, please see [here]()
+Now you can begin to use the library. To get how to use it, please see [here](https://github.com/doubotis/java-website-mvc/wiki)
