@@ -1,6 +1,16 @@
 # java-website-mvc
 MVC Wrapper for Java Websites
 
+## What is this?
+
+Java EE is very strong, but missing some major features for website development. In fact, modeling could be done with powerful tools like JPA. JSP and JSTL are a sufficient way to handle the "view" concept, but we missing a easy-to-use controller system. *Like Spring or Struts, this is a library that handles the concept of MVC (Model-View-Controller) for Web Development.*
+
+But, this one is waaay lighter and easier to use than Spring or Struts (or at least this was the main goal while developing this tool). Because sometimes, we doesn't need to build a tower when a house is completely sufficient.
+
+Another goal is to make a library that works like Smarty for PHP. For Java. And of course with some tweaks.
+
+Go to the Wiki Page to get how it works.
+
 ## Installation Guide
 
 ### Step 1 : Prerequisites
