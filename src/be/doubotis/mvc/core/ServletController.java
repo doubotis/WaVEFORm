@@ -27,6 +27,7 @@ import javax.servlet.http.HttpSession;
 public class ServletController extends HttpServlet implements ServletControllerContext {
     
     private HTTPException mException = null;
+    private static ControllerScanner mCache = null;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -44,8 +45,11 @@ public class ServletController extends HttpServlet implements ServletControllerC
         response.setContentType("text/html;charset=UTF-8");
         
         // Get the Controller Scanner.
-        ControllerScanner cs = ControllerScanner.fromContext(
+        if (mCache == null)
+            mCache = ControllerScanner.fromContext(
                 request.getServletContext());
+        
+        ControllerScanner cs = mCache;
         
         try
         {

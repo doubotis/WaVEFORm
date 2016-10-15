@@ -43,9 +43,13 @@ public class TranslationTag extends SimpleTagSupport {
                 result = "???";
             out.print(result);
             
-            
         } catch (java.io.IOException ex) {
             throw new JspException("Error in TranslationTag tag", ex);
+        } catch (Exception ex2) {
+            try
+            {
+                out.print("???");
+            } catch (Exception e) {}
         }
     }
 
