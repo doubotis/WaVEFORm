@@ -1,35 +1,40 @@
-<!DOCTYPE html>
-<html lang="en-us">
+<!doctype html>
+<html>
   <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>WaVEFORm by doubotis</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-dark.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
   </head>
   <body>
-    <section class="page-header">
-      <h1 class="project-name">WaVEFORm</h1>
-      <h2 class="project-tagline">Model-View-Controller Wrapper for Java Websites, using Web Java EE</h2>
-      <a href="https://github.com/doubotis/java-website-mvc" class="btn">View on GitHub</a>
-      <a href="https://github.com/doubotis/java-website-mvc/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/doubotis/java-website-mvc/tarball/master" class="btn">Download .tar.gz</a>
-    </section>
-
-    <section class="main-content">
-      <h1>
-<a id="waveform" class="anchor" href="#waveform" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>WaVEFORm</h1>
-
-<p>Model-View-Controller Wrapper for Java Websites, using Web Java EE</p>
-
-<h2>
+    <div class="wrapper">
+      <header>
+        <h1>WaVEFORm</h1>
+        <p>Model-View-Controller Wrapper for Java Websites, using Web Java EE</p>
+        <p class="view"><a href="https://github.com/doubotis/WaVEFORm">View the Project on GitHub <small>doubotis/WaVEFORm</small></a></p>
+        <ul>
+          <li><a href="https://github.com/doubotis/WaVEFORm/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/doubotis/WaVEFORm/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/doubotis/WaVEFORm">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h2>
 <a id="what-is-this" class="anchor" href="#what-is-this" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What is this?</h2>
 
 <p>Java EE is very strong, but missed some major features for efficient website development. In fact, modeling could be done with powerful tools like JPA. JSP and JSTL are a sufficient way to handle the "view" concept, but we missing an easy-to-use controller system. <em>Like Spring or Struts, this is a library that handles the concept of MVC (Model-View-Controller) for Web Development.</em></p>
 
 <p>But, this one is waaay lighter and easier to use than Spring or Struts (or at least this was the main goal while developing this library). Because sometimes, we doesn't need to build a tower when a house is completely sufficient.</p>
+
+<p>Basicly, for each web page of your website, you create a page class with the implementation of the page. You also tell the JSP to use for the page inside this class.</p>
 
 <p>Another goal is to make a library that works like Smarty for PHP. Ported fpr Java. And of course with some tweaks.</p>
 
@@ -51,48 +56,25 @@
 <h3>
 <a id="quick-install" class="anchor" href="#quick-install" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Quick Install</h3>
 
-<p>Download the <a href="https://github.com/doubotis/java-website-mvc/blob/master/store/java-website-mvc.jar">all-inclusive library</a>.
-Then add it to the list of librairies of a Web Java EE Project.</p>
-
-<p>This .jar includes:</p>
-
-<ul>
-<li>The library itself</li>
-<li>Web Java EE6 library</li>
-<li>Reflections-0.9 - from Google, based on <a href="https://github.com/ronmamo/reflections">https://github.com/ronmamo/reflections</a>
-</li>
-<li>Java HTTP Extensions - from doubotis. Add some classes for better Web Development.</li>
-</ul>
+<p>Please see the <a href="https://github.com/doubotis/java-website-mvc/wiki/Quick%20Install">Quick Install Guide</a></p>
 
 <h3>
-<a id="setup-the-webxml" class="anchor" href="#setup-the-webxml" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Setup the web.xml</h3>
+<a id="first-steps" class="anchor" href="#first-steps" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>First Steps</h3>
 
-<p>Now the library is installed, you must configure the <code>web.xml</code> file, to add the ServletController:</p>
+<p>Please see the <a href="https://github.com/doubotis/java-website-mvc/wiki/First%20Steps">First Steps Guide</a></p>
 
-<pre><code>    &lt;servlet&gt;
-        &lt;servlet-name&gt;ServletController&lt;/servlet-name&gt;
-        &lt;servlet-class&gt;be.doubotis.mvc.core.ServletController&lt;/servlet-class&gt;
-    &lt;/servlet&gt;
-    &lt;servlet-mapping&gt;
-        &lt;servlet-name&gt;ServletController&lt;/servlet-name&gt;
-        &lt;url-pattern&gt;*.html&lt;/url-pattern&gt;
-    &lt;/servlet-mapping&gt;
-</code></pre>
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
 
-<p>This means all .HTML files on the site will be managed by the <code>ServletController</code>.
-You can use a custom filter and a different url-pattern to match your needs.
-This servlet will serve all the webpages you need to display to the user.</p>
-
-<p>Now you can begin to use the library. To get how to use it, please see <a href="https://github.com/doubotis/java-website-mvc/wiki">here</a></p>
-
-      <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/doubotis/java-website-mvc">WaVEFORm</a> is maintained by <a href="https://github.com/doubotis">doubotis</a>.</span>
-
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
-      </footer>
-
-    </section>
-
-  
+<p>Licensed with GNU GPL.
+<a href="https://github.com/doubotis/WaVEFORm/blob/master/LICENSE.md">See the license</a>.</p>
+      </section>
+    </div>
+    <footer>
+      <p>Project maintained by <a href="https://github.com/doubotis">doubotis</a></p>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
   </body>
 </html>
