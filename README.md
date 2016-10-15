@@ -23,7 +23,7 @@ Go to the [Wiki](https://github.com/doubotis/java-website-mvc/wiki) Page to get 
 
 ### Quick Install
 
-Please see the [Quick Install Guide](Quick Install)
+Please see the [Quick Install Guide]((https://github.com/doubotis/java-website-mvc/wiki/Quick%20Install))
 Download the [all-inclusive library](https://github.com/doubotis/java-website-mvc/blob/master/store/java-website-mvc.jar).
 Then add it to the list of librairies of a Web Java EE Project.
 
