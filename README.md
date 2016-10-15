@@ -23,35 +23,10 @@ Go to the [Wiki](https://github.com/doubotis/java-website-mvc/wiki) Page to get 
 
 ### Quick Install
 
-Please see the [Quick Install Guide]((https://github.com/doubotis/java-website-mvc/wiki/Quick%20Install))
-Download the [all-inclusive library](https://github.com/doubotis/java-website-mvc/blob/master/store/java-website-mvc.jar).
-Then add it to the list of librairies of a Web Java EE Project.
+Please see the [Quick Install Guide](https://github.com/doubotis/java-website-mvc/wiki/Quick%20Install)
 
-This .jar includes:
-* The library itself
-* Web Java EE6 library
-* Reflections-0.9 - from Google, based on https://github.com/ronmamo/reflections
-* Java HTTP Extensions - from doubotis. Add some classes for better Web Development.
-
-### Setup the web.xml
-Now the library is installed, you must configure the `web.xml` file, to add the ServletController:
-
-```
-    <servlet>
-        <servlet-name>ServletController</servlet-name>
-        <servlet-class>be.doubotis.mvc.core.ServletController</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>ServletController</servlet-name>
-        <url-pattern>*.html</url-pattern>
-    </servlet-mapping>
-```
-
-This means all .HTML files on the site will be managed by the `ServletController`.
-You can use a custom filter and a different url-pattern to match your needs.
-This servlet will serve all the webpages you need to display to the user.
-
-Now you can begin to use the library. To get how to use it, please see [here](https://github.com/doubotis/java-website-mvc/wiki)
+### First Steps
+Please see the [First Steps Guide](https://github.com/doubotis/java-website-mvc/wiki/First%20Steps)
 
 ## License
 
