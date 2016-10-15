@@ -7,6 +7,8 @@ Java EE is very strong, but missed some major features for efficient website dev
 
 But, this one is waaay lighter and easier to use than Spring or Struts (or at least this was the main goal while developing this library). Because sometimes, we doesn't need to build a tower when a house is completely sufficient.
 
+Basicly, for each web page of your website, you create a page class with the implementation of the page. You also tell the JSP to use for the page inside this class.
+
 Another goal is to make a library that works like Smarty for PHP. Ported fpr Java. And of course with some tweaks.
 
 Go to the [Wiki](https://github.com/doubotis/java-website-mvc/wiki) Page to get how it works and how to use.
